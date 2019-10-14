@@ -9,19 +9,27 @@
 function ConvertHandler() {
   
   this.getNum = function(input) {
-    
     var result = input.slice(0, input.search(/[a-z]/i));
+    console.log(result);
      if (result == '') {
        result = 'invalid number';
        return result;
-     } else if (result)
+     } else if (/\/[0-9]*\/||\.[0-9]*\./.test(result)){
+       result = 'invalid number';
+       return result;
+     } else 
+       result = eval(result);
     return result;
   };
   
   this.getUnit = function(input) {
     var result = input.slice(input.search(/[a-z]/i));
-    
+    var units = ['gal','l','mi','km','lbs','kg','GAL','L','MI','KM','LBS','KG'];
+    if (units.includes(result)){
     return result;
+    } else {
+      return 'invalid unit';
+    }
   };
   
   this.getReturnUnit = function(initUnit) {

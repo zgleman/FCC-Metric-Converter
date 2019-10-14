@@ -30,25 +30,25 @@ suite('Unit Tests', function(){
     
     test('Fractional Input', function(done) {
       var input = '3/4gal'
-      assert.equal(convertHandler.getNum(input),'3/4');
+      assert.equal(convertHandler.getNum(input),.75);
       done();
     });
     
     test('Fractional Input w/ Decimal', function(done) {
       var input = '2.5/5km'
-      assert.equal(convertHandler.getNum(input),'2.5/5');
+      assert.equal(convertHandler.getNum(input),.5);
       done();
     });
     
     test('Invalid Input (double fraction)', function(done) {
       var input = '3/5/5km'
-      assert.equal(convertHandler.getNum(input), '3/5/6');
+      assert.equal(convertHandler.getNum(input), 'invalid number');
       done();
     });
     
     test('No Numerical Input', function(done) {
       var input = 'km'
-      assert.equal(convertHandler.getNum(input), '');
+      assert.equal(convertHandler.getNum(input), 'invalid number');
       done();
     }); 
     
@@ -65,7 +65,8 @@ suite('Unit Tests', function(){
     });
     
     test('Unknown Unit Input', function(done) {
-      
+      var input = 'non a unit';
+      assert.equal()
       //done();
     });  
     
