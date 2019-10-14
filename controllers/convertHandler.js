@@ -15,8 +15,8 @@ function ConvertHandler() {
   };
   
   this.getUnit = function(input) {
-    var result;
-    
+    var result = input.slice(input.search(/[a-z]/i));
+    console.log(result);
     return result;
   };
   
