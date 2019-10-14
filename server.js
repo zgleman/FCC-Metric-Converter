@@ -10,7 +10,10 @@ var fccTestingRoutes  = require('./routes/fcctesting.js');
 var runner            = require('./test-runner');
 
 var app = express();
-
+var helmet = require('helmet');
+app.use(helmet());
+app.use(helmet.xxsFilter());
+app.use(helmet.noSniff());
 app.use('/public', express.static(process.cwd() + '/public'));
 
 app.use(cors({origin: '*'})); //For FCC testing purposes only
