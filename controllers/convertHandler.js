@@ -9,8 +9,8 @@
 function ConvertHandler() {
   
   this.getNum = function(input) {
-    var result= input.match(/\d*\.*\d*/);
-    
+    var result = input.slice(0, input.indexOf(/\w/));
+    console.log(result);
     return result;
   };
   
