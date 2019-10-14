@@ -30,7 +30,7 @@ function ConvertHandler() {
     var result = input.slice(input.search(/[a-z]/i));
     var units = ['gal','l','mi','km','lbs','kg','GAL','L','MI','KM','LBS','KG'];
     if (units.includes(result)){
-    return result.toLowerCase();
+    return result;
     } else {
       return 'invalid unit';
     }
@@ -46,7 +46,7 @@ function ConvertHandler() {
   this.spellOutUnit = function(unit) {
     var input = ['gal','l','mi','km','lbs','kg'];
     var expect = ['gallons','liters','miles', 'kilometers','pounds','kilograms'];
-    var result = expect[input.indexOf(unit)];;
+    var result = expect[input.indexOf(unit.toLowerCase())];;
     
     return result;
   };
@@ -56,7 +56,7 @@ function ConvertHandler() {
     const lbsToKg = 0.453592;
     const miToKm = 1.60934;
     var result;
-    switch (initUnit){
+    switch (initUnit.toLowerCase()){
         case 'gal':
         result = initNum*galToL;
         break;
@@ -81,7 +81,7 @@ function ConvertHandler() {
   };
   
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
-    var result;
+    var result = initNum + ' ' + this.spellOutUnit(initUnit) + ' converts to ' + returnNum + ' ' + this.spellOutUnit(returnUnit);
     return result;
   };
   
