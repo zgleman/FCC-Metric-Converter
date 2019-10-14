@@ -11,6 +11,10 @@ function ConvertHandler() {
   this.getNum = function(input) {
     
     var result = input.slice(0, input.search(/[a-z]/i));
+     if (result == '') {
+       result = 'invalid number';
+       return result;
+     } else if (result)
     return result;
   };
   
