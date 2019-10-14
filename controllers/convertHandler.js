@@ -37,13 +37,16 @@ function ConvertHandler() {
   };
   
   this.getReturnUnit = function(initUnit) {
-    var result;
-    
+    var input = ['gal','l','mi','km','lbs','kg'];
+    var expect = ['l','gal','km','mi','kg','lbs'];
+    var result = expect[input.indexOf(initUnit.toLowerCase())];
     return result;
   };
 
   this.spellOutUnit = function(unit) {
-    var result;
+    var input = ['gal','l','mi','km','lbs','kg'];
+    var expect = ['gallons','liters','miles', 'kilometers','pounds','kilograms'];
+    var result = expect[input.indexOf(unit)];;
     
     return result;
   };
@@ -52,6 +55,10 @@ function ConvertHandler() {
     const galToL = 3.78541;
     const lbsToKg = 0.453592;
     const miToKm = 1.60934;
+    
+    
+    
+    
     var result;
     
     return result;
