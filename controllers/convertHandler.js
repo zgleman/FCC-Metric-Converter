@@ -9,8 +9,9 @@
 function ConvertHandler() {
   
   this.getNum = function(input) {
-    var result = input.slice(0, input.indexOf(/[a-z]*/));
-    console.log(input.indexOf(/[a-z]*/));
+    
+    var result = input.slice(0, input.search(/[a-z]/i));
+    console.log(input.search(/[a-z]/i));
     console.log(result);
     return result;
   };
