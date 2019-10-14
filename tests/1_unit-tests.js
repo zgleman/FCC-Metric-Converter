@@ -48,7 +48,7 @@ suite('Unit Tests', function(){
     
     test('No Numerical Input', function(done) {
       var input = 'km'
-      assert.equal(convertHandler.getNum(input), 'invalid number');
+      assert.equal(convertHandler.getNum(input), 1);
       done();
     }); 
     
@@ -108,27 +108,37 @@ suite('Unit Tests', function(){
     });
     
     test('L to Gal', function(done) {
-      
+      var input = [5, 'l'];
+      var expected = 18.9271;
+      assert.approximately(convertHandler.convert(input[0],input[1]),expected,0.1);
       //done();
     });
     
     test('Mi to Km', function(done) {
-      
+      var input = [5, 'mi'];
+      var expected = 18.9271;
+      assert.approximately(convertHandler.convert(input[0],input[1]),expected,0.1);
       //done();
     });
     
     test('Km to Mi', function(done) {
-      
+      var input = [5, 'km'];
+      var expected = 18.9271;
+      assert.approximately(convertHandler.convert(input[0],input[1]),expected,0.1);
       //done();
     });
     
     test('Lbs to Kg', function(done) {
-      
+      var input = [5, 'lbs'];
+      var expected = 18.9271;
+      assert.approximately(convertHandler.convert(input[0],input[1]),expected,0.1);
       //done();
     });
     
     test('Kg to Lbs', function(done) {
-      
+      var input = [5, 'kg'];
+      var expected = 18.9271;
+      assert.approximately(convertHandler.convert(input[0],input[1]),expected,0.1);
       //done();
     });
     

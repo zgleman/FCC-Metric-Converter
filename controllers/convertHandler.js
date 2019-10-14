@@ -12,7 +12,7 @@ function ConvertHandler() {
     var result = input.slice(0, input.search(/[a-z]/i));
     
      if (result == '') {
-       result = 'invalid number';
+       result = 1;
        return result;
      } else if (/\/[0-9]*\//.test(result)){
        result = 'invalid number';
@@ -55,12 +55,28 @@ function ConvertHandler() {
     const galToL = 3.78541;
     const lbsToKg = 0.453592;
     const miToKm = 1.60934;
-    
-    
-    
-    
     var result;
-    
+    switch (initUnit){
+        case 'gal':
+        result = initNum*galToL;
+        break;
+        case 'l':
+        result = initNum/galToL;
+        break;
+        case 'mi':
+        result = initNum*miToKm;
+        break;
+        case 'km':
+        result = initNum/miToKm;
+        break;
+        case 'lbs':
+        result = initNum*lbsToKg;
+        break;
+        case 'kg':
+        result = initNum/lbsToKg;
+        break;
+    }
+        
     return result;
   };
   
