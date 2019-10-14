@@ -30,7 +30,7 @@ function ConvertHandler() {
     var result = input.slice(input.search(/[a-z]/i));
     var units = ['gal','l','mi','km','lbs','kg','GAL','L','MI','KM','LBS','KG'];
     if (units.includes(result)){
-    return result;
+    return result.toLowerCase();
     } else {
       return 'invalid unit';
     }
@@ -81,8 +81,7 @@ function ConvertHandler() {
   };
   
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
-    var result = initNum + this.spelledOutUnit(initUnit) + 'converts to' + returnNum + this.spelledOutUnit(returnUnit)
-    
+    var result;
     return result;
   };
   
