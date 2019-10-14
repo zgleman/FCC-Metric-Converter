@@ -29,8 +29,9 @@ suite('Unit Tests', function(){
     });
     
     test('Fractional Input', function(done) {
-      
-      //done();
+      var input = '3/4gal'
+      assert.equal(convertHandler.getNum(input),3/4);
+      done();
     });
     
     test('Fractional Input w/ Decimal', function(done) {

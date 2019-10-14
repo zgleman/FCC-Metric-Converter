@@ -13,6 +13,8 @@ function ConvertHandler() {
     var result = input.slice(0, input.search(/[a-z]/i));
     console.log(input.search(/[a-z]/i));
     console.log(result);
+    result = Number.valueOf(result);
+    console.log(result);
     return result;
   };
   
