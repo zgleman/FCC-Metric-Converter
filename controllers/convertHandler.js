@@ -10,14 +10,18 @@ function ConvertHandler() {
   
   this.getNum = function(input) {
     var result = input.slice(0, input.search(/[a-z]/i));
-    console.log(result);
+    
      if (result == '') {
        result = 'invalid number';
        return result;
-     } else if (/\/[0-9]*\/||\.[0-9]*\./.test(result)){
+     } else if (/\/[0-9]*\//.test(result)){
        result = 'invalid number';
        return result;
-     } else 
+     } else if(/\.[0-9]*\./.test(result)){
+       result = 'invalid number';
+       return result;        
+               }
+    else 
        result = eval(result);
     return result;
   };

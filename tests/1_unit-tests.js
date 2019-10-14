@@ -41,7 +41,7 @@ suite('Unit Tests', function(){
     });
     
     test('Invalid Input (double fraction)', function(done) {
-      var input = '3/5/5km'
+      var input = '3..5km'
       assert.equal(convertHandler.getNum(input), 'invalid number');
       done();
     });
@@ -66,8 +66,8 @@ suite('Unit Tests', function(){
     
     test('Unknown Unit Input', function(done) {
       var input = 'non a unit';
-      assert.equal()
-      //done();
+      assert.equal(convertHandler.getUnit(input), 'invalid unit');
+      done();
     });  
     
   });
