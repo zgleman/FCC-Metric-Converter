@@ -83,8 +83,18 @@ suite('Functional Tests', function() {
       });
       
       test('Convert kg (no number)', function(done) {
-        
-        //done();
+        chai.request(server)
+        .get('/api/convert')
+        .query({input: 'kg'})
+        .end(function(err, res){
+          
+          assert.equal(res.status, 200);
+          assert.equal(res.body.initNum, 1);
+          assert.equal(res.body.initUnit, 'kg');
+          assert.approximately(res.body.returnNum, 2.2, 0.1);
+          assert.equal(res.body.returnUnit, 'lbs');
+          done();
+        });
       });
       
     });

@@ -89,7 +89,7 @@ function ConvertHandler() {
         break;
     }
         
-    return result;
+    return result
     }
   
   };
@@ -99,7 +99,7 @@ function ConvertHandler() {
       return returnNum;
     } else {
     
-    var result = initNum + ' ' + this.spellOutUnit(initUnit) + ' converts to ' + returnNum + ' ' + this.spellOutUnit(returnUnit);
+    var result = initNum + ' ' + this.spellOutUnit(initUnit) + ' converts to ' + returnNum.toFixed(5) + ' ' + this.spellOutUnit(returnUnit);
     return result;
     }
   };
