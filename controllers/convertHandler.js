@@ -14,10 +14,10 @@ function ConvertHandler() {
      if (result == '') {
        result = 1;
        return result;
-     } else if (/\/[0-9]*\//.test(result)){
+     } else if (/\/[0-9.]*\//.test(result)){
        result = 'invalid number';
        return result;
-     } else if(/\.[0-9]*\./.test(result)){
+     } else if(/\.[0-9/]*\./.test(result)){
        result = 'invalid number';
        return result;        
                }
@@ -95,8 +95,13 @@ function ConvertHandler() {
   };
   
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
+    if (/invalid/.test(returnNum)) {
+      return returnNum;
+    } else {
+    
     var result = initNum + ' ' + this.spellOutUnit(initUnit) + ' converts to ' + returnNum + ' ' + this.spellOutUnit(returnUnit);
     return result;
+    }
   };
   
 }
