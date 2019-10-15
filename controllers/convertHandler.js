@@ -37,9 +37,13 @@ function ConvertHandler() {
   };
   
   this.getReturnUnit = function(initUnit) {
+    if (initUnit == 'invalid unit') {
+      return 'invalid unit'
+    } else
     var input = ['gal','l','mi','km','lbs','kg'];
     var expect = ['l','gal','km','mi','kg','lbs'];
     var result = expect[input.indexOf(initUnit.toLowerCase())];
+      
     return result;
   };
 
@@ -52,6 +56,14 @@ function ConvertHandler() {
   };
   
   this.convert = function(initNum, initUnit) {
+    if (initNum == 'invalid number' && initUnit == 'invalid unit'){
+      return 'invalid number and unit';
+    } else if (initNum == 'invalid number') {
+      return 'invalid number';
+    } else if (initUnit == 'invalid unit') {
+      return 'invalid unit';
+    } else {
+    
     const galToL = 3.78541;
     const lbsToKg = 0.453592;
     const miToKm = 1.60934;
@@ -78,6 +90,8 @@ function ConvertHandler() {
     }
         
     return result;
+    }
+  
   };
   
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
