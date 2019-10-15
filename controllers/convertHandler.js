@@ -39,13 +39,13 @@ function ConvertHandler() {
   this.getReturnUnit = function(initUnit) {
     if (initUnit == 'invalid unit') {
       return 'invalid unit'
-    } else
+    } else {
     var input = ['gal','l','mi','km','lbs','kg'];
     var expect = ['l','gal','km','mi','kg','lbs'];
     var result = expect[input.indexOf(initUnit.toLowerCase())];
       
     return result;
-  };
+    }};
 
   this.spellOutUnit = function(unit) {
     var input = ['gal','l','mi','km','lbs','kg'];
